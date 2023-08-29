@@ -7,4 +7,8 @@ class Student < Person
     super(id, age, name, parent_permission)
     @classroom = classroom
   end
+
+  def play_hocky
+    "¯\\(ツ)/¯"
+  end
 end
