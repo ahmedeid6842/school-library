@@ -62,4 +62,30 @@ class App
 
     puts "Book created with title: #{book.title}"
   end
+
+  def create_rental(books, people, rentals)
+    puts "Enter the person's ID:"
+    person_id = gets.chomp.to_i
+    person = people.find { |p| p.id == person_id }
+    unless person
+      puts "Person not found."
+      return
+    end
+
+    puts "Enter the book's title:"
+    book_title = gets.chomp
+    book = books.find { |b| b.title == book_title }
+    unless book
+      puts "Book not found."
+      return
+    end
+
+    puts "Enter the rental date (YYYY-MM-DD):"
+    date = gets.chomp
+
+    rental = Rental.new(date, book, person)
+    rentals << rental
+
+    puts "Rental created with ID: #{rental.object_id}"
+  end
 end
