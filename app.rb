@@ -50,4 +50,16 @@ class App
     people << person
     puts "Person created with ID: #{person.id}"
   end
+
+  def create_book(books)
+    puts "Enter the book's title:"
+    title = gets.chomp
+    puts "Enter the book's author:"
+    author = gets.chomp
+
+    book = Book.new(title, author)
+    books << book
+
+    puts "Book created with title: #{book.title}"
+  end
 end
