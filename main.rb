@@ -1,10 +1,10 @@
-require_relative "app"
-require_relative "book"
-require_relative "person"
-require_relative "student"
-require_relative "teacher"
-require_relative "rental"
-require_relative "classroom"
+require_relative 'app'
+require_relative 'book'
+require_relative 'person'
+require_relative 'student'
+require_relative 'teacher'
+require_relative 'rental'
+require_relative 'classroom'
 
 MENU_OPTIONS = {
   1 => :list_books,
@@ -13,7 +13,7 @@ MENU_OPTIONS = {
   4 => :create_book,
   5 => :create_rental,
   6 => :list_rentals_for_person,
-  7 => :quit,
+  7 => :exit
 }.freeze
 
 def main
@@ -29,22 +29,22 @@ def main
 
       send(MENU_OPTIONS[choice], app)
     else
-      puts "Invalid choice."
+      puts 'Invalid choice.'
     end
 
-    puts ""
+    puts ''
   end
 end
 
 def display_menu_options
-  puts "What would you like to do?"
-  puts "1. List all books"
-  puts "2. List all people"
-  puts "3. Create a person"
-  puts "4. Create a book"
-  puts "5. Create a rental"
-  puts "6. List rentals for a person"
-  puts "7. Quit"
+  puts 'What would you like to do?'
+  puts '1. List all books'
+  puts '2. List all people'
+  puts '3. Create a person'
+  puts '4. Create a book'
+  puts '5. Create a rental'
+  puts '6. List rentals for a person'
+  puts '7. Exit'
 end
 
 def list_books(app)
@@ -56,7 +56,7 @@ def list_people(app)
 end
 
 def create_person(app)
-  puts "Enter the kind of person (1 for student, 2 for teacher):"
+  puts 'Enter the kind of person (1 for student, 2 for teacher):'
   kind = gets.chomp.to_i
   app.create_person(kind, app)
 end
