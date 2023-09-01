@@ -8,14 +8,14 @@ class App
   end
 
   def list_books(books)
-    puts "Books:"
+    puts 'Books:'
     books.each do |book|
       puts "Title: #{book.title}, Author: #{book.author}"
     end
   end
 
   def list_people(people)
-    puts "People:"
+    puts 'People:'
     people.each do |person|
       if person.is_a?(Student)
         puts "[Studnet] ID: #{person.id}, Name: #{person.name}, Age: #{person.age}"
@@ -27,7 +27,7 @@ class App
     end
   end
 
-  def create_person(kind, app)
+  def create_person(kind, _app)
     puts "Enter the person's name:"
     name = gets.chomp
     puts "Enter the person's age:"
@@ -44,7 +44,7 @@ class App
       specialization = gets.chomp
       person = Teacher.new(age, specialization, name)
     else
-      puts "Invalid input."
+      puts 'Invalid input.'
       return
     end
     people << person
@@ -68,7 +68,7 @@ class App
     person_id = gets.chomp.to_i
     person = people.find { |p| p.id == person_id }
     unless person
-      puts "Person not found."
+      puts 'Person not found.'
       return
     end
 
@@ -76,11 +76,11 @@ class App
     book_title = gets.chomp
     book = books.find { |b| b.title == book_title }
     unless book
-      puts "Book not found."
+      puts 'Book not found.'
       return
     end
 
-    puts "Enter the rental date (YYYY-MM-DD):"
+    puts 'Enter the rental date (YYYY-MM-DD):'
     date = gets.chomp
 
     rental = Rental.new(date, book, person)
@@ -94,7 +94,7 @@ class App
     person_id = gets.chomp.to_i
     person = people.find { |p| p.id == person_id }
     unless person
-      puts "Person not found."
+      puts 'Person not found.'
       return
     end
 
