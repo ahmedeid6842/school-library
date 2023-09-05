@@ -8,14 +8,14 @@ class App
   end
 
   def list_books(books)
-    puts "Books:"
+    puts 'Books:'
     books.each do |book|
       puts "Title: #{book.title}, Author: #{book.author}"
     end
   end
 
   def list_people(people)
-    puts "People:"
+    puts 'People:'
     people.each do |person|
       if person.is_a?(Student)
         puts "[Studnet] ID: #{person.id}, Name: #{person.name}, Age: #{person.age}"
@@ -30,7 +30,7 @@ class App
   def create_studnet(age, name, classroom_label, permission_input)
     classroom = Classroom.new(classroom_label)
 
-    permission = permission_input == "y"
+    permission = permission_input == 'y'
 
     person = Student.new(age, classroom, name, parent_permission: permission)
 
@@ -64,7 +64,7 @@ class App
     person_id = gets.chomp.to_i
     person = people.find { |p| p.id == person_id }
     unless person
-      puts "Person not found."
+      puts 'Person not found.'
       return
     end
 
