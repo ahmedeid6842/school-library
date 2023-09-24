@@ -1,7 +1,7 @@
 # <a name="about-project"> School Library</a>
 
 Use OOP to build a school library. A tool to record what books are in the library and who borrows them.
-
+![UML](https://github.com/microverseinc/curriculum-ruby/blob/main/oop/images/uml_class_diagram.png)
 <!-- TABLE OF CONTENTS -->
 
 # Table of Contents
